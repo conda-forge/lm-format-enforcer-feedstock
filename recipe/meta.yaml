@@ -1,5 +1,5 @@
 {% set name = "lm-format-enforcer" %}
-{% set version = "0.10.6" %}
+{% set version = "0.10.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lm_format_enforcer-{{ version }}.tar.gz
-  sha256: ca2f061e9cf22fbe9f5ada2bc774c2bd369e8649b806fb5d9080eee37449f4a6
+  sha256: a3fc888b06df2147571ec96ff387f77d6e26f281e900b7c765cbd94e90cd3fa2
 
 build:
   noarch: python
