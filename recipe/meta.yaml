@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lm_format_enforcer-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lm_format_enforcer-{{ version }}.tar.gz
   sha256: 3e0bfeaf9fac9f69c8947da554db9a19a76d0be6e85075055f2c70d0aca420da
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - poetry-core >=1.1.0
     - pip
   run:
-    - python >=3.8,<4.0
+    - python >={{ python_min }},<4.0
     - pydantic >=1.10.8
     - interegular >=0.3.2
     - packaging
@@ -34,6 +34,7 @@ test:
   requires:
     - pip
     - numpy >=1.21.0
+    - python {{ python_min }}
 
 about:
   home: https://github.com/noamgat/lm-format-enforcer
